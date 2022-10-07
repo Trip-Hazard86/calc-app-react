@@ -1,0 +1,9 @@
+/*want separate styles for the equals button, and the C button*/
+
+button:hover {
+    cursor: pointer;
+}
+
+button {
+    font-size: 2em;
+}

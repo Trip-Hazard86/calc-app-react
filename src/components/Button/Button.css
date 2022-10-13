@@ -1,4 +1,4 @@
-/*want separate styles for the equals button, and the C button*/
+/*TODO recolor screen div, recolor ops, equals diff colour*/
 
 button:hover {
     cursor: pointer;
@@ -7,3 +7,12 @@ button:hover {
 button {
     font-size: 2em;
 }
+
+.clear {
+    grid-column: 1 / span 2;
+}
+
+.equals {
+    grid-column: 3 / span 2;
+}
+

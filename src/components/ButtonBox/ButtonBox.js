@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "../Button/Button";
-import { msgButton } from "../functionLib/functionLib";
+//import { msgButton } from "../functionLib/functionLib";
 import "./ButtonBox.css";
 
 const BUTTONS = [
-	["C", "%", "/"],
+	["C", "CE", "/"],
 	[7, 8, 9, "X"],
 	[4, 5, 6, "-"],
 	[1, 2, 3, "+"],
@@ -27,7 +27,7 @@ class ButtonBox extends React.Component {
 							<Button
 								key={button.toString()}
 								buttonVal={button}
-								msgFunc={msgButton}
+								//msgFunc={msgButton}
 							/>
 						);
 					});

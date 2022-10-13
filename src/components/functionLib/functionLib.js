@@ -1,6 +1,5 @@
 //enforce MVC system by keeping JS functions in here, exporting and importing as needed
 
-//TODO figure out why all buttons are clicked twice automatically when page is refreshed
 export function msgButton(valueOfButton) {
 	console.log(valueOfButton + " clicked!");
 }

@@ -12,10 +12,15 @@ class Button extends React.Component {
 	render() {
 		return (
 			<button
+				type="button"
 				className={setClass(this.props.buttonVal)}
 				value={this.props.buttonVal}
+				//the onClick is an event handler
+				//when a button is clicked, an anon func is called
+				//the func reaches into props, grabs msgFunc, and sends the buttonVal as an arg
+				//this is enabling us to pass buttonVal up the heirarchy
 				onClick={() => {
-					msgButton(this.props.buttonVal);
+					this.props.msgFunc(this.props.buttonVal);
 				}}
 			>
 				{this.props.buttonVal}

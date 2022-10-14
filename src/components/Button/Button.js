@@ -2,7 +2,6 @@ import React from "react";
 import "./Button.css";
 
 import { setClass } from "../functionLib/functionLib";
-import { msgButton } from "../functionLib/functionLib";
 
 class Button extends React.Component {
 	constructor(props) {

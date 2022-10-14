@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "../Button/Button";
-//import { msgButton } from "../functionLib/functionLib";
 import "./ButtonBox.css";
 
 const BUTTONS = [

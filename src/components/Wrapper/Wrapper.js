@@ -2,28 +2,32 @@ import "./Wrapper.css";
 import React from "react";
 import Screen from "../Screen/Screen.js";
 import ButtonBox from "../ButtonBox/ButtonBox.js";
+import { calculate } from "../functionLib/functionLib";
 
 class Wrapper extends React.Component {
-	//constructor typically used to initialize local state by assigning object to this.state
 	constructor(props) {
 		super(props);
+		this.state = {
+			questionValue: "",
+			answerValue: "",
+		};
+	}
+
+	//pass calculate func. into this, so that the state can be updated
+	changeStateFromValue() {
+		this.setState({});
 	}
 
 	render() {
 		return (
 			<div className="calc-wrapper">
 				<Screen
-					//the dynamic button values, which are stored in valueParam, need to be available to Screen
-					//this is a case of passing the values DOWN
-					msgFunc={(valueParam) => this.props.msgFunc(valueParam)}
+					questionValue={this.state.questionValue}
+					answerValue={this.state.answerValue}
 				/>
 				<ButtonBox
-					//ButtonBox has access to the value of our Buttons
-					//Wrapper also needs access
-					//pass msgFunc as prop down to ButtonBox
-					msgFunc={(valueParam) =>
-						console.log(valueParam + " avail to wrapper")
-					}
+					//in order for changeState...to work, it needs to receive a value as an argument
+					msgFunc={(valueParam) => this.changeStateFromValue(valueParam)}
 				/>
 			</div>
 		);

@@ -1,21 +1,20 @@
 import React from "react";
 import "./Screen.css";
 
-//TODO check if value of button is available to screen
-//TODO have the screen show the value of the clicked button, by using setState()
-//TODO once achieved, write functions to determine how values are processed
-
+//Screen has props questionValue & answerValue
+//the values of these are held in the state of Wrapper
 class Screen extends React.Component {
 	constructor(props) {
 		super(props);
-		//the data displayed in screen will update in response to user events, so state seems appropriate
-		this.state = {
-			result: 0,
-		};
 	}
 
 	render() {
-		return <div className="screen">{this.props.msgFunc}</div>;
+		return (
+			<div className="screen-wrapper">
+				<div className="question-row">{this.props.questionValue}</div>
+				<div className="answer-row">{this.props.answerValue}</div>
+			</div>
+		);
 	}
 }
 

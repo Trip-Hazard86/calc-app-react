@@ -27,8 +27,7 @@ export function setClass(buttonValues) {
 export function calculate(valueParam) {
 	switch (valueParam) {
 		case "C": {
-			this.setState({ questionValue: "", answerValue: "" });
-			break;
+			return "";
 		}
 		case "CE": {
 			let questionStr = this.state.questionValue;

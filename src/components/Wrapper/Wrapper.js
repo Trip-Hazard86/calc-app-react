@@ -3,8 +3,6 @@ import React from "react";
 import Screen from "../Screen/Screen.js";
 import ButtonBox from "../ButtonBox/ButtonBox.js";
 
-//TODO enable Wrapper to access the value of the Button component
-
 class Wrapper extends React.Component {
 	//constructor typically used to initialize local state by assigning object to this.state
 	constructor(props) {
@@ -15,7 +13,7 @@ class Wrapper extends React.Component {
 		return (
 			<div className="calc-wrapper">
 				<Screen
-					//the button values, which are stored in valueParam, need to be available to Screen
+					//the dynamic button values, which are stored in valueParam, need to be available to Screen
 					//this is a case of passing the values DOWN
 					msgFunc={(valueParam) => this.props.msgFunc(valueParam)}
 				/>

@@ -1,6 +1,10 @@
 import React from "react";
 import "./Screen.css";
 
+//TODO check if value of button is available to screen
+//TODO have the screen show the value of the clicked button, by using setState()
+//TODO once achieved, write functions to determine how values are processed
+
 class Screen extends React.Component {
 	constructor(props) {
 		super(props);
@@ -11,7 +15,7 @@ class Screen extends React.Component {
 	}
 
 	render() {
-		return <div className="screen">{this.state.result}</div>;
+		return <div className="screen">{this.props.msgFunc}</div>;
 	}
 }
 

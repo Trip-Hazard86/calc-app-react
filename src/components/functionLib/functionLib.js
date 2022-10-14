@@ -20,9 +20,9 @@ export function setClass(buttonValues) {
 	}
 }
 
-//need func in here to calculate what happens when diff values are received
-//this func needs to update state
+//this func does NOT update the state...that is the job of f-changeValueFromState
 //import this function to wrapper
+//TODO - replace the setStates with returns
 
 export function calculate(valueParam) {
 	switch (valueParam) {
@@ -33,23 +33,19 @@ export function calculate(valueParam) {
 		case "CE": {
 			let questionStr = this.state.questionValue;
 			questionStr = questionStr.substring(0, questionStr.length - 1);
-			this.setState({ questionValue: questionStr });
-			break;
+			return questionStr;
 		}
 
 		case "=": {
 			if (this.state.questionValue !== "") {
 				let answerStr = "";
 				answerStr = eval(this.state.questionValue);
-				this.setState({ answer: answerStr, questionValue: "" });
-				break;
+				return answerStr;
 			}
 		}
 		default: {
-			this.setState({
-				questionValue: (this.state.questionValue += valueParam),
-			});
-			break;
+			questionValue = this.state.questionValue += valueParam;
+			return questionValue;
 		}
 	}
 }

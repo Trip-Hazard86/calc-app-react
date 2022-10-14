@@ -13,8 +13,8 @@ class Wrapper extends React.Component {
 		};
 	}
 
-	//pass calculate func. into this, so that the state can be updated
-	changeStateFromValue() {
+	//call calculate func. from this, so that the state can be updated
+	changeStateFromValue(valueParam) {
 		this.setState({});
 	}
 

@@ -13,7 +13,7 @@ export function setClass(buttonValues) {
 		case "+":
 		case "-":
 		case "/":
-		case "X":
+		case "*":
 			return "ops";
 		default:
 			return "numeral";
@@ -22,29 +22,28 @@ export function setClass(buttonValues) {
 
 //this func does NOT update the state...that is the job of f-changeValueFromState
 //import this function to wrapper
-//TODO - replace the setStates with returns
 
-export function calculate(valueParam) {
+export function decideOperator(valueParam, questionState) {
 	switch (valueParam) {
 		case "C": {
 			return "";
 		}
 		case "CE": {
-			let questionStr = this.state.questionValue;
+			let questionStr = questionState;
 			questionStr = questionStr.substring(0, questionStr.length - 1);
 			return questionStr;
 		}
-
 		case "=": {
-			if (this.state.questionValue !== "") {
+			if (questionState !== "") {
 				let answerStr = "";
-				answerStr = eval(this.state.questionValue);
+				answerStr = eval(questionState);
 				return answerStr;
 			}
 		}
 		default: {
-			questionValue = this.state.questionValue += valueParam;
-			return questionValue;
+			let myQuestion = "";
+			myQuestion = questionState += valueParam;
+			return myQuestion;
 		}
 	}
 }
